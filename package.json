@@ -1,0 +1,33 @@
+{
+  "name": "chromium-fetch-devtools-repro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal Angular 22 reproduction for a Chromium DevTools Fetch response-body issue.",
+  "packageManager": "pnpm@11.8.0",
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
+  "scripts": {
+    "repro": "node run.mjs",
+    "repro:xhr": "node run.mjs xhr",
+    "api": "node server.mjs",
+    "start": "ng serve --configuration development --host 127.0.0.1 --port 4200",
+    "start:xhr": "ng serve --configuration xhr --host 127.0.0.1 --port 4200",
+    "build": "ng build --configuration development",
+    "build:xhr": "ng build --configuration xhr"
+  },
+  "dependencies": {
+    "@angular/common": "22.0.2",
+    "@angular/compiler": "22.0.2",
+    "@angular/core": "22.0.2",
+    "@angular/platform-browser": "22.0.2",
+    "rxjs": "7.8.2",
+    "tslib": "2.8.1"
+  },
+  "devDependencies": {
+    "@angular/build": "22.0.3",
+    "@angular/cli": "22.0.3",
+    "@angular/compiler-cli": "22.0.2",
+    "typescript": "6.0.3"
+  }
+}

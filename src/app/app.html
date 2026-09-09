@@ -1,0 +1,22 @@
+<main>
+  <h1>Angular 22 Fetch DevTools reproduction</h1>
+  <p>Transport: <strong>{{ transportLabel }}</strong></p>
+  <p>
+    The application sends
+    <code>GET /api/documents?page=0&amp;size=5&amp;sort=createdDate%2Cdesc</code>
+    through the Angular development proxy.
+  </p>
+
+  <button type="button" (click)="load()">Send request again</button>
+
+  @if (error(); as requestError) {
+    <p class="error">Request failed: {{ requestError }}</p>
+  }
+
+  @if (response(); as response) {
+    <h2>Body received by the Angular application</h2>
+    <pre>{{ response | json }}</pre>
+  } @else {
+    <p>Waiting for the request response.</p>
+  }
+</main>
